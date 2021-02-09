@@ -1,0 +1,741 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.header
+{
+   width: 100%;
+   height: 20vh;
+   background-color: white;
+   text-align: center;
+}
+.header>img
+{
+   width:350px;
+}
+#succes_response
+{
+    display: block;
+    margin-bottom: 20px;
+}
+.nav_bar
+{
+    background-color: rgb(60,65,76);
+    height: 10vh;
+
+
+}
+
+.menu ul
+{
+    list-style: none;
+    height: 10vh;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 80%;
+    margin: 0 auto;
+
+
+
+
+}
+.menu ul a
+{
+    /* text-align: center; */
+    text-decoration: none;
+
+}
+.menu ul a li
+{
+    color: white;
+    text-decoration: none;
+    font-family: Poppins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+
+}
+.menu li:hover{
+background-color: #f05d57;
+}
+
+.main
+{
+  background-image: url(/img/main.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 58em;
+  background-color: black;
+}
+.title
+{
+    font-family: Poppins;
+    font-weight: 900;
+    font-size: 8em;
+   text-align: center;
+   padding-top: 2em;
+   color: rgb(255,254,254);
+}
+.subtitle
+{
+    font-family: Poppins;
+    font-size: 1.5em;
+
+   text-align: center;
+   padding-top: 2em;
+   color: rgb(255,254,254);
+}
+.read_more
+{
+    background-color: rgb(240,93,87);
+    width: 290px;
+    height: 70px;
+    text-align: center;
+    margin: 2.5em auto;
+    border: 2px solid rgb(240,93,87);
+
+}
+.read_more:hover
+{
+    background-color: transparent;
+    border: 2px solid rgb(255,254,254);
+    transition: .3s;
+}
+.read_more>a
+{
+    font-family: Poppins;
+    font-size: 1.2em;
+    color:rgb(255,254,254) ;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+.qualitie
+{
+    background-color:rgb(60,65,76) ;
+    width: 100%;
+    height: 100vh;
+}
+.about
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80%;
+    margin: 0 auto;
+    row-gap: 50px;
+    text-align: center;
+
+}
+.items
+{
+    display: block;
+    margin: 5em auto;
+}
+
+.image>img
+{
+    width: 90px;
+    height: 90px;
+
+}
+.name
+{
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.4em;
+    color:rgb(255,254,254) ;
+    margin-top: 1em;
+}
+.description
+{
+    font-family: Poppins;
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: rgb(137,139,145);
+
+}
+.section3
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 70vh;
+
+}
+.picture
+{
+    background-image: url(/img/about.jpg);
+    background-size: cover;
+}
+.text_block
+{
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color:rgb(207,216,220) ;
+}
+.heading,.sub_heading,.free_text
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.text_block *
+{
+    position: relative;
+    font-family: Poppins;
+}
+.heading>h2
+{
+    font-size: 42px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.28;
+}
+.sub_heading>h4
+{
+    font-weight: 500;
+    font-size: 22px;
+    font-style: normal;
+}
+.free_text>p{
+    font-size: 22px;
+    font-weight: 300;
+}
+.read_more2
+{
+    background-color: rgb(240,93,87);
+    width: 290px;
+    height: 70px;
+    text-align: center;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(240,93,87);
+    outline: 0;
+}
+.read_more2:hover
+{
+    background-color: transparent;
+    border: 2px solid  rgb(240,93,87);
+    transition: .3s;
+    cursor: pointer;
+}
+.read_more2>a:hover{
+    color:rgb(240,93,87);
+
+}
+.read_more2>a
+{
+    font-family: Poppins;
+    font-size: 1.2em;
+    color:rgb(255,254,254) ;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.heading,.sub_heading,.free_text
+{
+    margin-left: 2em;
+}
+.stats
+{
+    width: 100%;
+    height: 55vh;
+    background-image: url("/img/bec.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.stats .card
+{
+    width: calc(25% - 2em);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 20vw;
+}
+.stats .card .circle
+{
+    width: 10vw;
+    height: 20vh;
+    border-radius: 50%;
+}
+
+.box span{
+    position: relative;
+    top: -75%;
+    left: 30%;
+}
+.card .circle .box
+{
+    width: 90%;
+    height: 100%;
+    border-radius: 50%;
+}
+.card .circle .box span{
+    font-family: 'Poppins',sans-serif;
+    font-size: 3em;
+    color: white;
+}
+.card .titlu>h3
+{
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-style: normal;
+    color: white;
+}
+.footer
+{
+   width: 100%;
+   height: 20vh;
+   background-color: white;
+   text-align: center;
+
+
+}
+.footer>img
+{
+   width:350px;
+}
+.footer>.logo_text{
+margin-top: 1em;
+}
+
+.copyright
+{
+    font-family: Poppins;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    color: rgb(188,188,188);
+
+}
+.hai-sus
+{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-color: transparent;
+    border-radius: 30px;
+    background: rgb(240,93,87);
+    right: 40px;
+    bottom: 50px;
+    display: none;
+}
+.hai-sus:hover,
+.hai-sus:focus
+{
+    filter: brightness(1.5);
+    outline: none;
+}
+
+.hai-sus::before,
+.hai-sus::after
+{
+content: '';
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+}
+
+.hai-sus::before{
+    width: 5px;
+    height: 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: white;
+}
+
+.hai-sus::after{
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%,-50%) rotate(45deg);
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+
+}
+.sageata
+  {
+      width: 50px;
+      height: 50px;
+  }
+  .backgroud
+  {
+      background-image: url("/img/main2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height:68vh;
+  }
+  .main_title>span
+  {
+    font-family: Poppins;
+    font-size: 5.3em;
+    position: relative;
+    left: 2em;
+    top: 1.2em;
+    color: white;
+    font-style: normal;
+    line-height: 1.14;
+    font-weight: 500;
+  }
+  .subdescription>p
+  {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.63;
+    color: white;
+    position: relative;
+    top: 7em;
+    width: 60%;
+    left: 7.3em;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0px;
+    text-align: inherit;
+  }
+  .all_content
+  {
+      background-color: rgb(207,216,220) ;
+  }
+  .section
+  {
+      display: grid;
+      margin: 0 auto;
+      width: 90%;
+      grid-template-rows: repeat(8,1fr);
+  }
+
+  .principal:last-child
+  {
+     border: none;
+  }
+  .principal
+  {
+      border-bottom: 1px solid rgb(53,53,53);
+      padding: 5em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .text>h2
+  {
+      font-family: Poppins;
+      font-size: 43px;
+      font-weight: normal;
+  }
+  .text>p,.text>pre
+  {
+      font-family: Poppins;
+      padding-top: 2em;
+      font-size: 1.1em;
+      color: rgb(156,158,159);
+      white-space: pre-line;       /* Since CSS 2.1 */
+
+  }
+  /* Contacts */
+.dates
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(207,216,220);
+    padding: 10em;
+}
+.adress
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.adress>h3{
+    font-family: Poppins;
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(29,29,29);
+}
+.adress>div{
+ font-family: Poppins;
+ font-size: 1em;
+margin-top: 1em;
+}
+.bold
+{
+    font-weight: 600;
+    color: rgb(29,29,29);
+}
+.normal
+{
+    font-weight: 500;
+  color: rgb(29,29,29);
+}
+
+.form>h3{
+    font-family: Poppins;
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(29,29,29);
+}
+.form-label
+{
+    font-family: Poppins;
+}
+/* About page (*************************************************************************************** */
+.top
+{
+    background-image: url(/img/main3.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.top>div{
+    color: white;
+    font-family: Poppins;
+    font-size: 2em;
+    width: 50%;
+    margin-left: 6em;
+
+}
+.main__block
+{
+    background-color:rgb(207,216,220);
+    width: 100%;
+
+}
+.grid,.company_stats,.our_team
+{
+    border-bottom: 1px solid black;
+}
+.better
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins;
+    padding-top: 8.5em;
+
+
+}
+.better>h3{
+    font-weight: 400;
+    font-size: 3em;
+    color: rgb(11,11,11);
+}
+.grid
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+
+
+}
+.grid_item:nth-child(3),.grid_item:nth-child(4){
+    margin-top: 3em;
+    margin-bottom: 6em;
+}
+.grid_item>h4{
+    font-weight: 500;
+    padding-top: 2em;
+    font-size: 1.3rem;
+    color: rgb(11,11,11);
+}
+.grid_item>p{
+  color: rgb(143,144,144);
+}
+.company_stats
+{
+    width: 80%;
+    height: 55vh;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.company_stats .card
+{
+    width: calc(25% - 2em);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 20vw;
+}
+.box>span{
+
+  color: #f05d57;
+}
+.company_stats .card .circle
+{
+    width: 10vw;
+    height: 20vh;
+    border-radius: 50%;
+
+}
+.text_color{
+
+    color: rgb(29,29,29) !important;
+}
+.our_team
+{
+    width: 80%;
+    margin: 0 auto;
+    font-family: Poppins;
+}
+.our_team>h3{
+    text-align: center;
+    font-weight: 400;
+    font-size: 3em;
+    color: rgb(11,11,11);
+    padding-top: 3em;
+    padding-bottom: .5em;
+
+}
+.wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.team_mate>figure>img{
+    display: block;
+    margin: 0 auto;
+}
+.mate_name>h4{
+    font-weight: 600;
+    font-size: 1.2em;
+    padding:  2em 0 2em 0;
+}
+.mate_function>h5{
+    font-size: 1em;
+    color:rgb(138,139,139);
+    font-weight: 500;
+    padding-bottom: 2em;
+}
+.mate_description>p{
+    color:rgb(138,139,139);
+    padding-bottom: 5em;
+}
+.mate_name,.mate_function,.mate_description
+{
+ margin-left: 2.5em;
+}
+
+.featured_projects
+{
+    width: 80%;
+    margin: 0 auto;
+    font-family: Poppins;
+    padding-bottom: 8em;
+}
+.featured_projects>h3{
+    text-align: center;
+    font-weight: 400;
+    font-size: 3em;
+    color: rgb(11,11,11);
+    padding-top: 2em;
+    padding-bottom: .5em;
+
+}
+
+.gallery
+{
+ display: grid;
+ grid-template-columns: repeat(auto-fit,minmax(480px,1fr));
+}
+
+.gallery_items
+{
+    position: relative;
+    width: 480px;
+
+
+}
+.hover_block
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 98%;
+    opacity: 0;
+    background-color:tomato;
+    width: 100%;
+    transition: .5s ease-in-out;
+}
+.gallery_items:hover .hover_block{
+    opacity: .8;
+}
+
+.hover_text>h4
+{
+    font-family: Poppins;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+
+    transition: .2s ease-in-out;
+    transform: translate(-50%,-50%);
+
+
+}
+.hover_text>h4:hover
+{
+    color:rgb(0,0,0);
+    opacity: 1; z-index: 9999;
+}
+.right {
+    position: absolute;
+    top: 39%;
+    left: 70%;
+    width: 4em;
+    height: 4em;
+    border: 0.2em solid white;
+    border-radius: 50%;
+    margin-left: 1.5em;
+  }
+.right:hover{
+    border-color: black;
+}
+  .right:after {
+    content: '';
+    position: absolute;
+    top: 3%;
+    left: 39%;
+    margin-top: 1.12em;
+    margin-left: -0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.2em solid black;
+    border-right: 0.2em solid black;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
