@@ -62,7 +62,7 @@
             </div>
             <div class="form">
                 <h3>Scrie-ne un mesaj</h3>
-                <form action="/contacts/submit" method="POST" id="main_form">
+                <form action="/contacts/submit" method="post" id="main_form">
                     @csrf
 
                     <div class="mb-3">

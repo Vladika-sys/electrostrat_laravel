@@ -185,7 +185,7 @@
                 </div>
                 <div class="team_mate">
                     <figure>
-                        <img src="./img/tm1.jpg" alt="teammate1">
+                        <img src="./img/tm2.jpg" alt="teammate1">
                     </figure>
                     <div class="mate_name">
                         <h4>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="team_mate">
                     <figure>
-                        <img src="./img/tm1.jpg" alt="teammate1">
+                        <img src="./img/tm3.jpg" alt="teammate1">
                     </figure>
                     <div class="mate_name">
                         <h4>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="team_mate">
                     <figure>
-                        <img src="./img/tm1.jpg" alt="teammate1">
+                        <img src="./img/tm4.jpg" alt="teammate1">
                     </figure>
                     <div class="mate_name">
                         <h4>

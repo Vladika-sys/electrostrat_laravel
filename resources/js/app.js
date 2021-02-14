@@ -1,5 +1,6 @@
 const { includes, reduce } = require("lodash");
 require('./main');
+require('./dashboard');
 $(document).ready(function()
 {
 
@@ -52,7 +53,7 @@ let options =
     });
     $(".fourth .bard").circleProgress({
         value:0.35,
-       
+
     });
 
 

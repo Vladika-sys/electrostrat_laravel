@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\IndexController@mainpage');
+Route::get('/services/{id}','App\Http\Controllers\ServicesController@showMore');
 Route::get('/services','App\Http\Controllers\ServicesController@services');
 Route::post('/contacts/submit', 'App\Http\Controllers\ContactsController@save');
 Route::get('/contacts','App\Http\Controllers\ContactsController@contacts')->name('contacts');
 Route::get('/about','App\Http\Controllers\AboutController@about');
+Route::get('/dashboard','App\Http\Controllers\DashboardController@dashboard');
 

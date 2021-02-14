@@ -23,8 +23,8 @@
         <div class="menu">
             <ul>
                 <a href="/"> <li>Acasa</li></a>
-                <a href="#"> <li>Servicii</li> </a>
-                <a href="#"><li> Despre noi</li></a>
+                <a href="/services"> <li>Servicii</li> </a>
+                <a href="/about"><li> Despre noi</li></a>
                 <a href="/contacts"><li> Contacte</li></a>
             </ul>
         </div>
@@ -58,6 +58,9 @@
                         <pre>
                         {{ $s->description}}
                         </pre>
+                        <div class="read_more2">
+                            <a href="/services/{{$s->slug}}">Citește mai mult</a>
+                        </div>
                     </div>
                 </div>
                 @else
@@ -70,6 +73,9 @@
                         <pre>
                             {{ $s->description }}
                         </pre>
+                        <div class="read_more2">
+                            <a href="/services/{{$s->slug}}">Citește mai mult</a>
+                        </div>
                     </div>
                     <div class="imagine">
                         <img src="{{ $s->image_path }}" alt="2">

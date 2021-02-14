@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Services;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ServicesController extends Controller
 {
@@ -14,5 +16,14 @@ class ServicesController extends Controller
         return view('services', [
             'services' => $services
         ]);
+    }
+    public function showMore($slug)
+    {
+       
+        $services = Services::where('slug', '=', $slug)->firstOrFail();
+
+
+
+        return view('services_description',['services'=>$services]);
     }
 }

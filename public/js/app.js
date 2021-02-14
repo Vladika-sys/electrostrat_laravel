@@ -13,6 +13,8 @@ var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.j
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
+__webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
+
 $(document).ready(function () {
   var buton = $('.hai-sus');
   $(window).on('scroll', function () {
@@ -49,6 +51,30 @@ $(".third .bar").circleProgress({
 $(".fourth .bard").circleProgress({
   value: 0.35
 }); //
+
+/***/ }),
+
+/***/ "./resources/js/dashboard.js":
+/*!***********************************!*\
+  !*** ./resources/js/dashboard.js ***!
+  \***********************************/
+/***/ (() => {
+
+var link = document.querySelectorAll('.nav-link');
+var tables = document.querySelectorAll('.tabel');
+link.forEach(function (element) {
+  element.addEventListener('click', function () {
+    tables.forEach(function (table) {
+      table.classList.add('d-none');
+    });
+    link.forEach(function (l) {
+      l.classList.remove('active');
+    });
+    element.classList.add('active');
+    var id = $(this).attr('href');
+    $(id).removeClass('d-none');
+  });
+});
 
 /***/ }),
 
