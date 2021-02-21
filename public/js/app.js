@@ -15,6 +15,14 @@ __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
 
+__webpack_require__(/*! ./submit_validation */ "./resources/js/submit_validation.js");
+
+__webpack_require__(/*! ./edit_services */ "./resources/js/edit_services.js");
+
+__webpack_require__(/*! ./delete_services */ "./resources/js/delete_services.js");
+
+__webpack_require__(/*! ./feedback_validation */ "./resources/js/feedback_validation.js");
+
 $(document).ready(function () {
   var buton = $('.hai-sus');
   $(window).on('scroll', function () {
@@ -78,6 +86,132 @@ link.forEach(function (element) {
 
 /***/ }),
 
+/***/ "./resources/js/delete_services.js":
+/*!*****************************************!*\
+  !*** ./resources/js/delete_services.js ***!
+  \*****************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  $('.deletebtn').on('click', function () {
+    $('#deletemodal').modal('show');
+    var info = $(this).closest('tr').find("td").map(function () {
+      return $(this).text();
+    }).get();
+    $('#delete_id').val(info[0]);
+  });
+  $('#delete_form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      method: $(this).attr('method'),
+      url: '/services/' + $('#delete_id').val() + '/delete',
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          alert("S-a produs o eroare!");
+        } else {
+          $('#delete_form')[0].reset();
+          $('#deletemodal').modal('hide');
+          location.reload();
+          alert(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/edit_services.js":
+/*!***************************************!*\
+  !*** ./resources/js/edit_services.js ***!
+  \***************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  var url = $('#gotoservice').attr('href');
+  console.log(url);
+  $('.editbtn').on('click', function () {
+    $('#editmodal').modal('show');
+    var info = $(this).closest('tr').find("td").map(function () {
+      return $(this).text();
+    }).get();
+    $('#update_id').val(info[0]);
+    $('#slug').val(info[1]);
+    $('#title').val(info[2]);
+    $('#description').val(info[3]);
+    $('#image_path').val(info[4]);
+    $('#gotoservice').attr('href', url + '/' + info[1]);
+  });
+  $('#edit_form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      method: $(this).attr('method'),
+      url: '/services/' + $('#update_id').val() + '/edit',
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          console.log('error');
+        } else {
+          $('#edit_form')[0].reset();
+          $('#editmodal').modal('hide');
+          location.reload();
+          alert(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/feedback_validation.js":
+/*!*********************************************!*\
+  !*** ./resources/js/feedback_validation.js ***!
+  \*********************************************/
+/***/ (() => {
+
+$(function () {
+  $("#feedback_form").on('submit', function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: $(this).attr('method'),
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      beforeSend: function beforeSend() {
+        $(document).find('span.error-text').text('');
+      },
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          $.each(data.error, function (prefix, val) {
+            $('span.' + prefix + '_error').text(val[0]);
+          });
+        } else {
+          $('#feedback_form')[0].reset();
+          $('#succes_response').text(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -106,6 +240,45 @@ $(function () {
           });
         } else {
           $('#main_form')[0].reset();
+          location.reload();
+          $('#editmodal').modal('hide');
+          $('#succes_response').text(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/submit_validation.js":
+/*!*******************************************!*\
+  !*** ./resources/js/submit_validation.js ***!
+  \*******************************************/
+/***/ (() => {
+
+$(function () {
+  $("#modal_form").on('submit', function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: $(this).attr('method'),
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      beforeSend: function beforeSend() {
+        $(document).find('span.error-text').text('');
+      },
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          $.each(data.error, function (prefix, val) {
+            $('span.' + prefix + '_error').text(val[0]);
+          });
+        } else {
+          $('#modal_form')[0].reset();
           $('#succes_response').text(data.msg);
         }
       }

@@ -260,6 +260,9 @@ background-color: #f05d57;
     justify-content: space-between;
 
 }
+.card{
+    border: none  !important;
+}
 .stats .card
 {
     width: calc(25% - 2em);
@@ -665,6 +668,7 @@ margin-top: 1em;
 {
  display: grid;
  grid-template-columns: repeat(auto-fit,minmax(480px,1fr));
+ row-gap: 1em;
 }
 
 .gallery_items
@@ -681,7 +685,7 @@ margin-top: 1em;
     left: 0;
     bottom: 0;
     right: 0;
-    height: 98%;
+    height: 100%;
     opacity: 0;
     background-color:tomato;
     width: 100%;
@@ -800,4 +804,43 @@ margin-top: 1em;
     justify-content: center;
 
 }
+.feedback{
+    width: 75%;
+    margin: 0 auto;
+}
+.feedback h3{
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 2em;
+}
+.mb-3>label{
+    padding-left: 0.5em;
+}
+.testimonials {
+    padding: 100px 0;
+  }
+  .testimonials h3 {
+    margin-bottom: 20px;
+  }
+  .testimonials .card {
+    border-bottom: 3px #007bff solid !important;
+    transition: 0.5s;
+    margin-top: 60px;
+  }
+  .testimonials .card i {
+    background-color: #007bff;
+    color: #ffffff;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    margin: -40px auto 0 auto;
+  }
+  .container>h3
+  {
+      font-family: Poppins;
+      color: rgb(33,37,41);
+      font-weight: 500;
+      font-size: 2em;
+
+  }
 

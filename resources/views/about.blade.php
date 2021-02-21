@@ -8,15 +8,15 @@
     <link rel="shortcut icon" href="../img/bec.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"
-        integrity="sha512-6kvhZ/39gRVLmoM/6JxbbJVTYzL/gnbDVsHACLx/31IREU4l3sI7yeO0d4gw8xU5Mpmm/17LMaDHOCf+TvuC2Q=="
-        crossorigin="anonymous"></script>
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js" integrity="sha512-6kvhZ/39gRVLmoM/6JxbbJVTYzL/gnbDVsHACLx/31IREU4l3sI7yeO0d4gw8xU5Mpmm/17LMaDHOCf+TvuC2Q=="  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
     <title>Despre noi</title>
 </head>
@@ -378,6 +378,65 @@
                 </div>
             </div>
         </div>
+        <div class="feedback">
+            <h3>Lasă-ne o recenzie pentru a deveni mai buni!</h3>
+                <form action="/about/submit" method="post" id="feedback_form">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nume complet</label>
+                        <input type="text" name="name" class="form-control" id="exampleFormControlInput1" value="{{ old('name')}}" placeholder="ex:Popescu Vasile">
+                        <span class="text-danger error-text name_error">@error('name')
+                            {{$message}}
+                        @enderror</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ old('email')}}" placeholder="name@example.com">
+                        <span class="text-danger error-text email_error" >@error('email')
+                            {{$message}}
+                        @enderror</span>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Ai rămas mulțumit de serviciile noastre?</label>
+                        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" value="{{ old('description')}}" rows="3"></textarea>
+                        <span class="text-danger error-text description_error" >@error('description')
+                            {{$message}}
+                        @enderror</span>
+                      </div>
+                      <span id="succes_response" class="text-success"></span>
+                      <div class="mb-3">
+                        <button type="submit" name="submit" class="btn btn-success">Expediază</button>
+                      </div>
+
+                </form>
+        </div>
+        <div class="testimonials text-center">
+
+            <div class="container">
+              <h3>Recenzii</h3>
+              <div class="row">
+                @foreach ($feedbacks as $f)
+                <div class="col-md-3">
+
+                  <div class="card border-light bg-light text-center">
+                    <i class="fa fa-quote-left fa-3x card-img-top rounded-circle" aria-hidden="true"></i>
+                    <div class="card-body blockquote">
+                      <p class="card-text">{{$f->feedback}}</p>
+                      <footer class="blockquote-footer"><cite title="Source Title">{{$f->name}}</cite></footer>
+                    </div>
+                  </div>
+
+                </div>
+
+                @endforeach
+
+              </div>
+            </div>
+
+          </div>
+
         <div class="footer">
             <img src="../img/log.svg" alt="">
             <p class="copyright">
@@ -387,5 +446,7 @@
         <a href="#" class="hai-sus"></a>
 </body>
 <script src="/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 
 </html>

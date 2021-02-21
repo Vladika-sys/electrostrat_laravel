@@ -37,4 +37,8 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    // public function render(Request $req,Exception $exception)
+    // {
+    //    dd($exception);
+    // }
 }

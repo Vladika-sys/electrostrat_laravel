@@ -61,7 +61,7 @@
 
             </div>
             <div class="form">
-                <h3>Scrie-ne un mesaj</h3>
+                <h3>Ai nevoie de ceva? Lasă-ne un mesaj</h3>
                 <form action="/contacts/submit" method="post" id="main_form">
                     @csrf
 

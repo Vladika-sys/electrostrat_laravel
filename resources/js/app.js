@@ -1,6 +1,10 @@
 const { includes, reduce } = require("lodash");
 require('./main');
 require('./dashboard');
+require('./submit_validation');
+require('./edit_services');
+require('./delete_services');
+require('./feedback_validation');
 $(document).ready(function()
 {
 

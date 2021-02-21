@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -17,201 +18,127 @@
         crossorigin="anonymous"></script>
 
     <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
         }
-      }
+        #gotoservice
+        {
+            text-decoration: none;
+
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
     </style>
 
 
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
 
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Electrostrat SRL</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
-    </li>
-  </ul>
-</header>
+<body>
 
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#services">
-              <span data-feather="file"></span>
-              Servicii
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#comenzi">
-              <span data-feather="shopping-cart"></span>
-              Comenzi
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#feedback">
-              <span data-feather="users"></span>
-              Feedback
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              X
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              X
-            </a>
-          </li>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Electrostrat SRL</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
         </ul>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">
+                                <span data-feather="file"></span>
+                                Servicii
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#comenzi">
+                                <span data-feather="shopping-cart"></span>
+                                Comenzi
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#feedback">
+                                <span data-feather="users"></span>
+                                Feedback
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                X
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                X
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+            </div>
+            @include('admin.services')
+
+            @include('admin.orders')
+
+            @include('admin.feedback')
 
 
-      </div>
-    </nav>
+            @include('admin.add_services')
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
 
-      </div>
+            @include('admin.edit_services')
 
-<div id="services" class="tabel d-none">
-    <h2>Servicii</h2>
-    <div class="table-responsive">
-      <table class="table table-striped table-sm">
-        <thead class="text-center">
+            @include('admin.delete_services')
 
-          <tr>
-            <th>id</th>
-            <th>Slug</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image path</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-        <tbody class="text-center">
-            @foreach($services as $item)
-          <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->slug}}</td>
-            <td>{{$item->title}}</td>
-            <td style="width:60%;">{{$item->description}}</td>
-            <td>{{$item->image_path}}</td>
-            <td>
-                <button class="btn btn-primary">
-                    Edit
-                </button>
-                <button class="btn btn-danger">
-                    Delete
-                </button>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+        </main>
     </div>
-</div>
-<div id="comenzi" class="tabel d-none">
-    <h2>Comenzi</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead class="text-center">
 
-            <tr>
-              <th>id</th>
-              <th>Slug</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Company</th>
-              <th>Subject</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-              @foreach($orders as $item)
-            <tr>
-              <td>{{$item->id}}</td>
-              <td>{{$item->slug}}</td>
-              <td>{{$item->name}}</td>
-              <td>{{$item->email}}</td>
-              <td>{{$item->company}}</td>
-              <td>{{$item->subject}}</td>
-              <td>{{$item->description}}</td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-</div>
-<div id="feedback" class="tabel d-none">
-    <h2>Section title3</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead class="text-center">
 
-            <tr>
-              <th>id</th>
-              <th>Slug</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Image path</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-              @foreach($services as $item)
-            <tr>
-              <td>{{$item->id}}</td>
-              <td>{{$item->slug}}</td>
-              <td>{{$item->title}}</td>
-              <td>{{$item->description}}</td>
-              <td>{{$item->image_path}}</td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-</div>
-      {{-- ------------------------------------------------------------- --}}
-
-      {{-- ------------------------------------------------------------ --}}
-
-      {{-- ------------------------------------------------------------------------------------- --}}
-    </main>
-  </div>
-</div>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
+    <script src="/js/dashboard.js"></script>
+</body>
 
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="/js/dashboard.js"></script>
-  </body>
 </html>

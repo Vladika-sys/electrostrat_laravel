@@ -6,8 +6,7 @@ use App\Models\Messages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
-//  use CEITI\W1741\BestsFriends\ReaboiVictor;
-//  use CEITI\W1741\BestsFriends\VaneaCiobanu;
+
 
 
 class ContactsController extends Controller
@@ -21,9 +20,9 @@ class ContactsController extends Controller
     {
 
         $validator = Validator::make($req->all(), [
-            'name' => 'required',
-            'email' => 'required|email|unique:messages',
-            'company' => 'required',
+            'name' => 'required|max:100',
+            'email' => 'required|email|max:80|unique:messages',
+            'company' => 'required|max:100',
             'subject' => 'required',
             'description' => 'required'
         ]);

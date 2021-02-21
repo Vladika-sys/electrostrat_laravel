@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\IndexController@mainpage');
-Route::get('/services/{id}','App\Http\Controllers\ServicesController@showMore');
+Route::get('/services/{slug}','App\Http\Controllers\ServicesController@showMore');
 Route::get('/services','App\Http\Controllers\ServicesController@services');
 Route::post('/contacts/submit', 'App\Http\Controllers\ContactsController@save');
 Route::get('/contacts','App\Http\Controllers\ContactsController@contacts')->name('contacts');
-Route::get('/about','App\Http\Controllers\AboutController@about');
+Route::post('/about/submit', 'App\Http\Controllers\FeedbacksController@save');
+Route::get('/about','App\Http\Controllers\AboutController@abokut');
+Route::post('/services/{id}/edit','App\Http\Controllers\DashboardController@edit');
+Route::post('/services/{id}/delete','App\Http\Controllers\DashboardController@delete');
 Route::get('/dashboard','App\Http\Controllers\DashboardController@dashboard');
+Route::post('/dashboard/submit','App\Http\Controllers\DashboardController@save');
 

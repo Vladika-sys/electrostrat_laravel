@@ -19,11 +19,7 @@ class ServicesController extends Controller
     }
     public function showMore($slug)
     {
-       
         $services = Services::where('slug', '=', $slug)->firstOrFail();
-
-
-
         return view('services_description',['services'=>$services]);
     }
 }
