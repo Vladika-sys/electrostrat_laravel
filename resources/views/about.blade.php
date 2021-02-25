@@ -255,12 +255,13 @@
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <div class="featured_projects">
             <h3>
-                Featuradaded Projects
+                Featured Projects
             </h3>
             <div class="gallery">
                 <div class="gallery_items">
@@ -380,7 +381,7 @@
         </div>
         <div class="feedback">
             <h3>Lasă-ne o recenzie pentru a deveni mai buni!</h3>
-                <form action="/about/submit" method="post" id="feedback_form">
+                <form action="/about/submit" method="POST" id="feedback_form">
                     @csrf
 
                     <div class="mb-3">

@@ -23,6 +23,12 @@ __webpack_require__(/*! ./delete_services */ "./resources/js/delete_services.js"
 
 __webpack_require__(/*! ./feedback_validation */ "./resources/js/feedback_validation.js");
 
+__webpack_require__(/*! ./register_validation */ "./resources/js/register_validation.js");
+
+__webpack_require__(/*! ./edit_orders */ "./resources/js/edit_orders.js");
+
+__webpack_require__(/*! ./edit_feedback.js */ "./resources/js/edit_feedback.js");
+
 $(document).ready(function () {
   var buton = $('.hai-sus');
   $(window).on('scroll', function () {
@@ -127,6 +133,89 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/js/edit_feedback.js":
+/*!***************************************!*\
+  !*** ./resources/js/edit_feedback.js ***!
+  \***************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  $('.feedback_edit').on('click', function () {
+    $('#edit_feedback').modal('show');
+    var info = $(this).closest('tr').find("td").map(function () {
+      return $(this).text();
+    }).get();
+    $('#feedback_id').val(info[0]);
+    $('#feedback_status').val(info[4]);
+  });
+  $('#feedback_form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      method: $(this).attr('method'),
+      url: '/feedback/' + $('#feedback_id').val() + '/edit',
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          console.log('error');
+        } else {
+          $('#feedback_form')[0].reset();
+          $('#edit_feedback').modal('hide'); //     location.reload();
+          //    alert(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/edit_orders.js":
+/*!*************************************!*\
+  !*** ./resources/js/edit_orders.js ***!
+  \*************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  $('.edit_orders').on('click', function () {
+    $('#edit_order').modal('show');
+    var info = $(this).closest('tr').find("td").map(function () {
+      return $(this).text();
+    }).get();
+    $('#order_id').val(info[0]);
+    $('#status').val(info[6]);
+  });
+  $('#order_form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      method: $(this).attr('method'),
+      url: '/orders/' + $('#order_id').val() + '/edit',
+      data: new FormData(this),
+      processData: false,
+      dataType: 'json',
+      contentType: false,
+      complete: function complete(r) {
+        var data = r.responseJSON;
+
+        if (data.status == 0) {
+          console.log('error');
+        } else {
+          $('#order_form')[0].reset();
+          $('#edit_order').modal('hide');
+          location.reload();
+          alert(data.msg);
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/edit_services.js":
 /*!***************************************!*\
   !*** ./resources/js/edit_services.js ***!
@@ -135,7 +224,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   var url = $('#gotoservice').attr('href');
-  console.log(url);
   $('.editbtn').on('click', function () {
     $('#editmodal').modal('show');
     var info = $(this).closest('tr').find("td").map(function () {
@@ -240,14 +328,50 @@ $(function () {
           });
         } else {
           $('#main_form')[0].reset();
-          location.reload();
-          $('#editmodal').modal('hide');
           $('#succes_response').text(data.msg);
         }
       }
     });
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/register_validation.js":
+/*!*********************************************!*\
+  !*** ./resources/js/register_validation.js ***!
+  \*********************************************/
+/***/ (() => {
+
+// $(function(){
+//     $("#register_form").on('submit',function(event)
+//     {
+//         event.preventDefault();
+//         $.ajax({
+//             url: $(this).attr('action'),
+//             method: $(this).attr('method'),
+//             data: new FormData(this),
+//             processData:false,
+//             dataType:'json',
+//             contentType:false,
+//             beforeSend:function(){
+//                 $(document).find('span.error-text').text('');
+//             },
+//             complete: function(r){
+//                 var data = r.responseJSON;
+//                 if(data.status == 0 )
+//                 {
+//                     $.each(data.error,function(prefix,val){
+//                         $('span.' + prefix + '_error').text(val[0]);
+//                     });
+//                 }else{
+//                     $('#register_form')[0].reset();
+//                     $('#succes_response').text(data.msg);
+//                 }
+//             }
+//         });
+//     });
+//     });
 
 /***/ }),
 

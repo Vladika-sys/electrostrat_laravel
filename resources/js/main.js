@@ -24,8 +24,6 @@ $("#main_form").on('submit',function(event)
                 });
             }else{
                 $('#main_form')[0].reset();
-                location.reload();
-                $('#editmodal').modal('hide');
                 $('#succes_response').text(data.msg);
             }
         }

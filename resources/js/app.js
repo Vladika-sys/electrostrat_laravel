@@ -5,6 +5,9 @@ require('./submit_validation');
 require('./edit_services');
 require('./delete_services');
 require('./feedback_validation');
+require('./register_validation');
+require('./edit_orders');
+require('./edit_feedback.js');
 $(document).ready(function()
 {
 

@@ -38,6 +38,7 @@ class ContactsController extends Controller
                 'company' => $req->company,
                 'subject' => $req->subject,
                 'description' => $req->description,
+                'status' => "unread"
             ];
 
             $querry = DB::table('messages')->insert($values);

@@ -27,6 +27,7 @@ class FeedbacksController extends Controller
                 'name'=> $req->name,
                 'email' => $req->email,
                 'feedback' => $req->description,
+                'status' => 'private'
             ];
 
             $querry = DB::table('feedbacks')->insert($values);

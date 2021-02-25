@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let url = $('#gotoservice').attr('href');
-    console.log(url);
+
     $('.editbtn').on('click', function() {
 
         $('#editmodal').modal('show');
@@ -8,7 +8,8 @@ $(document).ready(function() {
         let info = $(this).closest('tr').find("td").map(function() {
             return $(this).text();
         }).get();
-        $('#update_id').val(info[0]);
+    $('#update_id').val(info[0]);
+
         $('#slug').val(info[1]);
         $('#title').val(info[2]);
         $('#description').val(info[3]);

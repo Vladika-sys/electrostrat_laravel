@@ -9,6 +9,8 @@
                     <th>Name</th>
                     <th>email</th>
                     <th>Feedback</th>
+                    <th>Status</th>
+                    <th>Edit</th>
 
                 </tr>
             </thead>
@@ -19,6 +21,11 @@
                         <td>{{ $feedback->name }}</td>
                         <td>{{ $feedback->email }}</td>
                         <td>{{ $feedback->feedback }}</td>
+                        <td>{{$feedback->status}}</td>
+                        <td>
+                            <i class="far fa-edit feedback_edit"></i>
+                            <i class="far fa-trash-alt feedback_delete"></i>
+                        </td>
 
                     </tr>
                 @endforeach

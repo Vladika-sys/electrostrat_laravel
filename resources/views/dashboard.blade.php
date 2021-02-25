@@ -10,6 +10,7 @@
     <title>Admin Panel</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
@@ -56,10 +57,12 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
+        <span class="text-danger">{{ $LoggedUserInfo->name}}</span>
         <ul class="navbar-nav px-3">
+
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sign out</a>
+                <a class="nav-link" href="logout">Sign out</a>
             </li>
         </ul>
     </header>
@@ -122,6 +125,10 @@
             @include('admin.edit_services')
 
             @include('admin.delete_services')
+
+            @include('admin.edit_orders')
+
+            @include('admin.edit_feedback')
 
         </main>
     </div>

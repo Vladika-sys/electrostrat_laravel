@@ -9,7 +9,7 @@ class AboutController extends Controller
 {
     public function about()
     {
-        $feedbacks = Feedbacks::all();
+        $feedbacks = Feedbacks::all()->where('status','=','public');
         return view('about',[
             'feedbacks' => $feedbacks
         ]);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Services;
 use App\Models\Messages;
 use App\Models\Feedbacks;
+use App\Models\Users;
 use Illuminate\Support\Facades\DB;
 use Validator;
 
@@ -16,11 +17,17 @@ class DashboardController extends Controller
     $services = Services::all();
     $orders = Messages::all();
     $feedbacks = Feedbacks::all();
+    if(session()->has('LoggedUser')){
+        $user = Users::where('id','=',session('LoggedUser'))->first();
+
+    }
 
     return view('dashboard', [
         'services' => $services,
         'orders' => $orders,
-        'feedbacks' => $feedbacks
+        'feedbacks' => $feedbacks,
+        'LoggedUserInfo'=>$user
+
     ]);
 
 
@@ -76,5 +83,26 @@ class DashboardController extends Controller
 
         return response()->json(['status' => 1, 'msg' => 'Serviciul  a fost șters cu succes!']);
     }
+    public function order_edit(Request $request,$id)
+    {
+
+        $orders = Messages::find($id);
+        $orders->status = $request->input('status');
+
+         $orders->save();
+        return response()->json(['status' => 1, 'msg' => 'Comanda a fost primită cu succes']);
+
+    }
+    public function feedback_edit(Request $request,$id)
+    {
+
+        $orders = Feedbacks::find($id);
+        $orders->status = $request->input('feedback_status');
+
+         $orders->save();
+        return response()->json(['status' => 1, 'msg' => 'Comanda a fost primită cu succes']);
+
+    }
+
 
 }

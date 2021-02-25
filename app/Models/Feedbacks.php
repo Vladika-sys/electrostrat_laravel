@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedbacks extends Model
 {
-    use HasFactory;
+    protected $table = "feedbacks";
+    protected $fillable = ['status'];
+   
 }

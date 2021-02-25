@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToMessages extends Migration
+class AddStatusColumnToFeedbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddColumnToMessages extends Migration
      */
     public function up()
     {
-        Schema::table('messages', function (Blueprint $table) {
-            $table->string('slug',200);
-            $table->unique('slug');
+        Schema::table('feedbacks', function (Blueprint $table) {
+            $table->string('status');
         });
     }
 
@@ -26,7 +25,7 @@ class AddColumnToMessages extends Migration
      */
     public function down()
     {
-        Schema::table('messages', function (Blueprint $table) {
+        Schema::table('feedbacks', function (Blueprint $table) {
             //
         });
     }
