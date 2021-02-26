@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
 
-                <form  id="feedback_form" method="POST">
+                <form  id="feedback_edit_form" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">

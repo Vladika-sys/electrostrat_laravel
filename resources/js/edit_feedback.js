@@ -11,11 +11,11 @@ $(document).ready(function(){
 
     });
 
-    $('#feedback_form').on('submit',function(e)
+    $('#feedback_edit_form').on('submit',function(e)
     {
         e.preventDefault();
         $.ajax({
-            method: $(this).attr('method'),
+            method: 'POST',
             url: '/feedback/'+$('#feedback_id').val()+'/edit',
             data: new FormData(this),
             processData: false,
@@ -26,10 +26,10 @@ $(document).ready(function(){
                 if (data.status == 0) {
                     console.log('error');
                 } else {
-                    $('#feedback_form')[0].reset();
+                    $('#feedback_edit_form')[0].reset();
                     $('#edit_feedback').modal('hide');
-                //     location.reload();
-                //    alert(data.msg);
+                    location.reload();
+                   alert(data.msg);
                 }
             }
         });

@@ -37,6 +37,7 @@
             </ul>
         </div>
     </div>
+
     <div class="more_info">
 
         <div class="service_image">

@@ -29,6 +29,8 @@ __webpack_require__(/*! ./edit_orders */ "./resources/js/edit_orders.js");
 
 __webpack_require__(/*! ./edit_feedback.js */ "./resources/js/edit_feedback.js");
 
+__webpack_require__(/*! ./burger_menu */ "./resources/js/burger_menu.js");
+
 $(document).ready(function () {
   var buton = $('.hai-sus');
   $(window).on('scroll', function () {
@@ -65,6 +67,34 @@ $(".third .bar").circleProgress({
 $(".fourth .bard").circleProgress({
   value: 0.35
 }); //
+
+/***/ }),
+
+/***/ "./resources/js/burger_menu.js":
+/*!*************************************!*\
+  !*** ./resources/js/burger_menu.js ***!
+  \*************************************/
+/***/ (() => {
+
+var nav = document.getElementById('nav');
+var menu = document.getElementById('menu');
+var button = document.querySelector('.burger');
+var apasat = 0;
+button.addEventListener('click', function () {
+  if (apasat == 0) {
+    //  nav.classList.remove('nav_bar');
+    nav.classList.add('nav_mobile'); //  menu.classList.remove('menu');
+
+    menu.classList.add('menu_mobile');
+    apasat = 1;
+  } else {
+    //nav.classList.add('nav_bar');
+    nav.classList.remove('nav_mobile'); //menu.classList.add('menu');
+
+    menu.classList.remove('menu_mobile');
+    apasat = 0;
+  }
+});
 
 /***/ }),
 
@@ -148,10 +178,10 @@ $(document).ready(function () {
     $('#feedback_id').val(info[0]);
     $('#feedback_status').val(info[4]);
   });
-  $('#feedback_form').on('submit', function (e) {
+  $('#feedback_edit_form').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
-      method: $(this).attr('method'),
+      method: 'POST',
       url: '/feedback/' + $('#feedback_id').val() + '/edit',
       data: new FormData(this),
       processData: false,
@@ -163,9 +193,10 @@ $(document).ready(function () {
         if (data.status == 0) {
           console.log('error');
         } else {
-          $('#feedback_form')[0].reset();
-          $('#edit_feedback').modal('hide'); //     location.reload();
-          //    alert(data.msg);
+          $('#feedback_edit_form')[0].reset();
+          $('#edit_feedback').modal('hide');
+          location.reload();
+          alert(data.msg);
         }
       }
     });

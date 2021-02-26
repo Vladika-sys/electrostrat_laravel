@@ -1,0 +1,44 @@
+.dates
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(207,216,220);
+    padding: 10em;
+}
+.adress
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.adress>h3{
+    font-family: Poppins;
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(29,29,29);
+}
+.adress>div{
+ font-family: Poppins;
+ font-size: 1em;
+margin-top: 1em;
+}
+.bold
+{
+    font-weight: 600;
+    color: rgb(29,29,29);
+}
+.normal
+{
+    font-weight: 500;
+  color: rgb(29,29,29);
+}
+
+.form>h3{
+    font-family: Poppins;
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(29,29,29);
+}
+.form-label
+{
+    font-family: Poppins;
+}

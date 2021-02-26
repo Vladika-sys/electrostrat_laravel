@@ -1,0 +1,76 @@
+.backgroud
+  {
+      background-image: url("/img/main2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height:68vh;
+  }
+  .main_title>span
+  {
+    font-family: Poppins;
+    font-size: 5.3em;
+    position: relative;
+    left: 2em;
+    top: 1.2em;
+    color: white;
+    font-style: normal;
+    line-height: 1.14;
+    font-weight: 500;
+  }
+  .subdescription>p
+  {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.63;
+    color: white;
+    position: relative;
+    top: 7em;
+    width: 60%;
+    left: 7.3em;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0px;
+    text-align: inherit;
+  }
+  .all_content
+  {
+      background-color: rgb(207,216,220) ;
+  }
+  .section
+  {
+      display: grid;
+      margin: 0 auto;
+      width: 90%;
+      grid-template-rows: repeat(8,1fr);
+  }
+
+  .principal:last-child
+  {
+     border: none;
+  }
+  .principal
+  {
+      border-bottom: 1px solid rgb(53,53,53);
+      padding: 5em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .text>h2
+  {
+      font-family: Poppins;
+      font-size: 43px;
+      font-weight: normal;
+  }
+  .text>p,.text>pre
+  {
+      font-family: Poppins;
+      padding-top: 2em;
+      font-size: 1.1em;
+      color: rgb(156,158,159);
+      white-space: pre-line;       /* Since CSS 2.1 */
+
+  }
+  /* Contacts */
+

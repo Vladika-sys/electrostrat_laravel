@@ -100,7 +100,7 @@ class DashboardController extends Controller
         $orders->status = $request->input('feedback_status');
 
          $orders->save();
-        return response()->json(['status' => 1, 'msg' => 'Comanda a fost primită cu succes']);
+        return response()->json(['status' => 1, 'msg' => 'Feedback-ul a fost editat cu succes']);
 
     }
 

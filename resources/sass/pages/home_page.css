@@ -1,0 +1,363 @@
+.main
+{
+  background-image: url(/img/main.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 58em;
+  background-color: black;
+}
+.title
+{
+    font-family: Poppins;
+    font-weight: 900;
+    font-size: 8em;
+   text-align: center;
+   padding-top: 2em;
+   color: rgb(255,254,254);
+}
+.subtitle
+{
+    font-family: Poppins;
+    font-size: 1.5em;
+
+   text-align: center;
+   padding-top: 2em;
+   color: rgb(255,254,254);
+}
+.read_more
+{
+    background-color: rgb(240,93,87);
+    width: 290px;
+    height: 70px;
+    text-align: center;
+    margin: 2.5em auto;
+    border: 2px solid rgb(240,93,87);
+
+}
+.read_more:hover
+{
+    background-color: transparent;
+    border: 2px solid rgb(255,254,254);
+    transition: .3s;
+}
+.read_more>a
+{
+    font-family: Poppins;
+    font-size: 1.2em;
+    color:rgb(255,254,254) ;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+.qualitie
+{
+    background-color:rgb(60,65,76) ;
+    width: 100%;
+    height: 100vh;
+}
+.about
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80%;
+    margin: 0 auto;
+    row-gap: 50px;
+    text-align: center;
+
+}
+.items
+{
+    display: block;
+    margin: 5em auto;
+}
+
+.image>img
+{
+    width: 90px;
+    height: 90px;
+
+}
+.name
+{
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.4em;
+    color:rgb(255,254,254) ;
+    margin-top: 1em;
+}
+.description
+{
+    font-family: Poppins;
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: rgb(137,139,145);
+
+}
+.section3
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 70vh;
+
+}
+.picture
+{
+    background-image: url(/img/about.jpg);
+    background-size: cover;
+}
+.text_block
+{
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color:rgb(207,216,220) ;
+}
+.heading,.sub_heading,.free_text
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.text_block *
+{
+    position: relative;
+    font-family: Poppins;
+}
+.heading>h2
+{
+    font-size: 42px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.28;
+}
+.sub_heading>h4
+{
+    font-weight: 500;
+    font-size: 22px;
+    font-style: normal;
+}
+.free_text>p{
+    font-size: 22px;
+    font-weight: 300;
+}
+.read_more2
+{
+    background-color: rgb(240,93,87);
+    width: 290px;
+    height: 70px;
+    text-align: center;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(240,93,87);
+    outline: 0;
+}
+.read_more2:hover
+{
+    background-color: transparent;
+    border: 2px solid  rgb(240,93,87);
+    transition: .3s;
+    cursor: pointer;
+}
+.read_more2>a:hover{
+    color:rgb(240,93,87);
+
+}
+.read_more2>a
+{
+    font-family: Poppins;
+    font-size: 1.2em;
+    color:rgb(255,254,254) ;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.heading,.sub_heading,.free_text
+{
+    margin-left: 2em;
+}
+.stats
+{
+    width: 100%;
+    height: 55vh;
+    background-image: url("/img/bec.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.card{
+    border: none  !important;
+}
+.stats .card
+{
+    width: calc(25% - 2em);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 20vw;
+}
+.stats .card .circle
+{
+    width: 10vw;
+    height: 20vh;
+    border-radius: 50%;
+}
+
+.box span{
+    position: relative;
+    top: -75%;
+    left: 30%;
+}
+.card .circle .box
+{
+    width: 90%;
+    height: 100%;
+    border-radius: 50%;
+}
+.card .circle .box span{
+    font-family: 'Poppins',sans-serif;
+    font-size: 3em;
+    color: white;
+}
+.card .titlu>h3
+{
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-style: normal;
+    color: white;
+}
+/* media */
+@media screen and (max-width:1440px)
+{
+    .stats{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
+        height: auto;
+    }
+    .stats .card{
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+    .card .circle .box span{
+        left: 1.2em;
+        top: -2.9em;
+    }
+}
+@media screen and (max-width: 1024px)
+{
+    .section3{
+            display: block;
+            height: auto;
+    }
+    .picture{
+        width: 100%;
+        height: 50vh;
+
+    }
+    .stats .card .circle {
+       width: auto;
+    }
+}
+@media screen and (max-width:768px)
+{
+
+    .stats .card{
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    .about{
+        display: grid;
+        width: 90%;
+        column-gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+       row-gap: 1px;
+    }
+    .items .description{
+        text-align: justify;
+    }
+    .qualitie
+    {
+        height: auto;
+    }
+    .title{
+        font-size: 4em;
+    }
+    .subtitle{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .read_more{
+        margin-top: 5em;
+
+    }
+    .main{
+        height: 40em;
+    }
+    .text_block{
+        text-align: center;
+
+    }
+    .text_block *{
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+    .burger{
+        display: block !important;
+    }
+    .menu{
+        display: none;
+    }
+    .header>img{
+        padding-top: 4.5em;
+
+    }
+    .footer>img{
+        padding-top: 2.5em;
+    }
+
+}
+@media screen and (max-width:425px)
+{
+    .about{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .picture
+    {
+        height: 30vh;
+    }
+    .stats{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .description
+    {
+        font-size: 1.555em;
+    }
+    .hai-sus{
+        right: 20px !important;
+    }
+    .copyright{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.2em;
+        padding-bottom: 4em;
+    }
+}

@@ -8,6 +8,7 @@ require('./feedback_validation');
 require('./register_validation');
 require('./edit_orders');
 require('./edit_feedback.js');
+require('./burger_menu');
 $(document).ready(function()
 {
 

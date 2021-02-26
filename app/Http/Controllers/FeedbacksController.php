@@ -33,7 +33,7 @@ class FeedbacksController extends Controller
             $querry = DB::table('feedbacks')->insert($values);
             if($querry)
             {
-                return response()->json(['status' => 1, 'msg' => 'Mesajul dumeavoastră a fost înregistrat cu succes']);
+                return response()->json(['status' => 1, 'msg' => 'Mesajul dumeavoastră a fost trimis spre moderare!']);
             }
         }
     }
