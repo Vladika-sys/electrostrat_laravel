@@ -24,7 +24,7 @@ button.addEventListener('click',function(){
          menu.classList.remove('menu_mobile');
          apasat = 0;
      }
-   
+
 });
 
 

@@ -19,17 +19,14 @@
                     <tr>
 
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->slug }}</td>
-                        <td>{{ $item->title }}</td>
-                        <td style="width:60%;">{{ $item->description }}</td>
+                        <td style="width:10%;">{{ $item->slug }}</td>
+                        <td style="width:20%;">{{ $item->title }}</td>
+                        <td style="width:40%;">{{ $item->description }}</td>
                         <td>{{ $item->image_path }}</td>
                         <td>
-                            <button class="btn btn-primary editbtn">
-                                Edit
-                            </button>
-                            <button class="btn btn-danger deletebtn">
-                                Delete
-                            </button>
+                            <i class="far fa-edit editbtn"></i>
+
+                             <i class="far fa-trash-alt deletebtn"></i>
                         </td>
                     </tr>
                 @endforeach

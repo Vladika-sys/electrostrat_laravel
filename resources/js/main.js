@@ -22,6 +22,7 @@ $("#main_form").on('submit',function(event)
                 $.each(data.error,function(prefix,val){
                     $('span.' + prefix + '_error').text(val[0]);
                 });
+              
             }else{
                 $('#main_form')[0].reset();
                 $('#succes_response').text(data.msg);

@@ -38,7 +38,7 @@ class DashboardController extends Controller
 
      $validator = Validator::make($req->all(), [
          'slug' => 'required|unique:services',
-         'title' => 'required|max:100',
+         'title' => 'required|max:1000',
          'description' => 'required|unique:services',
          'image_path' => 'required'
      ]);

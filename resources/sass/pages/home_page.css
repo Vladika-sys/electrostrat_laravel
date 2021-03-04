@@ -277,6 +277,7 @@
 @media screen and (max-width:768px)
 {
 
+
     .stats .card{
         padding-top: 10em;
         padding-bottom: 10em;
@@ -320,14 +321,12 @@
     }
     .burger{
         display: block !important;
+
     }
     .menu{
         display: none;
     }
-    .header>img{
-        padding-top: 4.5em;
 
-    }
     .footer>img{
         padding-top: 2.5em;
     }
@@ -360,4 +359,25 @@
         font-size: 1.2em;
         padding-bottom: 4em;
     }
+}
+@media screen and (max-width:320px){
+    .title{
+        font-size: 3em;
+    }
+
+    .header>img{
+        width: 100% !important;
+        padding-top: 1em !important;
+    }
+    .footer>img{
+        width: 100% !important;
+    }
+    .hai-sus{
+        right: 10px;
+        display: block !important;
+    }
+    .titlu>h3{
+        padding-top: 2em;
+    }
+
 }

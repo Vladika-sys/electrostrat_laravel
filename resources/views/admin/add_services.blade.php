@@ -18,7 +18,7 @@
                                             Slug
                                         </label>
                                         <input type="text" name="slug" class="form-control"
-                                            placeholder="Introduceți slug-ul produsului" required>
+                                            placeholder="Introduceți slug-ul produsului">
                                         <span class="text-danger error-text slug_error">@error('slug')
                                                 {{ $message }}
                                             @enderror</span>
@@ -28,7 +28,7 @@
                                             Title
                                         </label>
                                         <input type="text" name="title" class="form-control"
-                                            placeholder="Introduceți titlul" required>
+                                            placeholder="Introduceți titlul">
                                         <span class="text-danger error-text title_error">@error('title')
                                                 {{ $message }}
                                             @enderror</span>
@@ -49,7 +49,7 @@
                                             Image path
                                         </label>
                                         <input type="text" name="image_path" class="form-control"
-                                            placeholder="Introduceți calea imaginii /img/numeimagine" required>
+                                            placeholder="Introduceți calea imaginii /img/numeimagine">
                                         <span class="text-danger error-text image_path_error">@error('image_path')
                                                 {{ $message }}
                                             @enderror</span>

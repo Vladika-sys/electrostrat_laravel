@@ -25,8 +25,8 @@
     <div class="header">
         <img src="/img/log.svg" alt="">
     </div>
-    <div class="nav_bar">
-        <div class="menu">
+    <div class="nav_bar" id="nav">
+        <div class="menu" id="menu">
             <ul>
                 <a href="/">
                     <li>Acasa</li>
@@ -41,6 +41,9 @@
                     <li> Contacte</li>
                 </a>
             </ul>
+        </div>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
 
@@ -103,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="company_stats">
+        {{-- <div class="company_stats">
             <div class="card">
                 <div class="circle">
                     <div class="bar">
@@ -157,7 +160,7 @@
                     <h3 class="text_color">Orders Completed</h3>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="our_team">
             <h3>Meet the TEAM</h3>
             <div class="wrapper">
@@ -269,7 +272,27 @@
                 <div class="gallery_items">
 
                     <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
+                        <img src="./img/cars1.jpg" alt="">
+                    </div>
+                    <div class="hover_block">
+                        <div class="hover_text">
+                            <h4>
+                                Acesta este un text
+                            </h4>
+                            <div class="arrow">
+                                <a href="#">
+                                    <span class="right"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="gallery_items">
+
+                    <div class="gallery_img">
+                        <img src="./img/cars2.jpg" alt="">
                     </div>
                     <div class="hover_block">
                         <div class="hover_text">
@@ -288,7 +311,7 @@
                 <div class="gallery_items">
 
                     <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
+                        <img src="./img/cars3.jpg" alt="">
                     </div>
                     <div class="hover_block">
                         <div class="hover_text">
@@ -307,7 +330,7 @@
                 <div class="gallery_items">
 
                     <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
+                        <img src="./img/cars4.jpg" alt="">
                     </div>
                     <div class="hover_block">
                         <div class="hover_text">
@@ -326,7 +349,7 @@
                 <div class="gallery_items">
 
                     <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
+                        <img src="./img/cars5.jpg" alt="">
                     </div>
                     <div class="hover_block">
                         <div class="hover_text">
@@ -345,26 +368,7 @@
                 <div class="gallery_items">
 
                     <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
-                    </div>
-                    <div class="hover_block">
-                        <div class="hover_text">
-                            <h4>
-                                Acesta este un text
-                            </h4>
-                            <div class="arrow">
-                                <a href="#">
-                                    <span class="right"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="gallery_items">
-
-                    <div class="gallery_img">
-                        <img src="./img/11.jpg" alt="">
+                        <img src="./img/cars6.jpg" alt="">
                     </div>
                     <div class="hover_block">
                         <div class="hover_text">
@@ -386,14 +390,14 @@
                 <form action="/about/submit" method="POST" id="feedback_form">
                     @csrf
 
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label for="exampleFormControlInput1" class="form-label">Nume complet</label>
                         <input type="text" name="name" class="form-control" id="exampleFormControlInput1" value="{{ old('name')}}" placeholder="ex:Popescu Vasile">
                         <span class="text-danger error-text name_error">@error('name')
                             {{$message}}
                         @enderror</span>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label for="exampleFormControlInput2" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ old('email')}}" placeholder="name@example.com">
                         <span class="text-danger error-text email_error" >@error('email')
@@ -401,7 +405,7 @@
                         @enderror</span>
                     </div>
 
-                      <div class="mb-3">
+                      <div class="mb-4">
                         <label for="exampleFormControlTextarea1" class="form-label">Ai rămas mulțumit de serviciile noastre?</label>
                         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" value="{{ old('description')}}" rows="3"></textarea>
                         <span class="text-danger error-text description_error" >@error('description')
@@ -409,7 +413,7 @@
                         @enderror</span>
                       </div>
                       <span id="succes_response" class="text-success"></span>
-                      <div class="mb-3">
+                      <div class="mb-4">
                         <button type="submit" name="submit" class="btn btn-success">Expediază</button>
                       </div>
 

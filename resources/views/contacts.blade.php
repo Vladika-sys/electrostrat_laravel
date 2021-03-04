@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"integrity="sha512-6kvhZ/39gRVLmoM/6JxbbJVTYzL/gnbDVsHACLx/31IREU4l3sI7yeO0d4gw8xU5Mpmm/17LMaDHOCf+TvuC2Q==" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/app.css">
     <title>Document</title>
 </head>
@@ -21,8 +21,8 @@
     <div class="header">
         <img src="/img/log.svg" alt="">
     </div>
-    <div class="nav_bar">
-        <div class="menu">
+    <div class="nav_bar" id="nav">
+        <div class="menu" id="menu">
             <ul>
                 <a href="/">
                     <li>Acasa</li>
@@ -37,6 +37,9 @@
                     <li> Contacte</li>
                 </a>
             </ul>
+        </div>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
     <div id="map">
@@ -60,7 +63,7 @@
                 </div>
 
             </div>
-            <div class="form">
+            <div class="form" id="contacts">
                 <h3>Ai nevoie de ceva? Lasă-ne un mesaj</h3>
                 <form action="/contacts/submit" method="post" id="main_form">
                     @csrf
